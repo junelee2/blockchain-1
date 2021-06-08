@@ -1,6 +1,4 @@
-import random
-chain = {}
-
+# 블록을 만들어주는 클래스 
 class block:
     def setdata(self, data, hash_, previoushash, time):
         self.data = data
@@ -9,15 +7,23 @@ class block:
         self.time = time
         self.data = data
 
+import binascii
+# 작업증명을 해주는 함수
+def proof_of_work(hash,data):
+    mine = making_hash(hash+data)
+    return mine
+
+# 블록을 연결해주는 함수
 import datetime
-def Making_node(data, hash_, previoushash):
-    time = datetime.datetime.today().strftime('%Y-%m-%d-%H-%M-%S')
+def chaining_block(data, hash_, previoushash):
     currunt_block = block()
-    currunt_block.setdata(data, hash_, previoushash, time)
+    currunt_block.setdata(data, hash_, previoushash, datetime.datetime.today().strftime('%Y-%m-%d-%H-%M-%S'))
     return currunt_block
 
+# 해시 만들어주는 함수
+import hashlib
+def making_hash(word):
+    return hashlib.sha256(word.encode()).hexdigest()
+
 if __name__ == '__main__':
-    data = 'data'
-    hashdata = 'hashdata'
-    prehash = 'prehash'
-    print(Making_node(data, hashdata, prehash))
+    pass
