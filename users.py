@@ -12,10 +12,9 @@ class block:
 def proof_of_work(hash,data):
     pass
 
-# 블록을 연결해주는 함수
+# 블록을 만들어주는 함수
 import datetime
 def chaining_block(data, hash_, previoushash):
-    # 블록을 만들어주는 함수
     currunt_block = block()
     currunt_block.setdata(data, hash_, previoushash, datetime.datetime.today().strftime('%Y-%m-%d-%H-%M-%S'))
     return currunt_block
