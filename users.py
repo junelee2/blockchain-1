@@ -7,11 +7,9 @@ class block:
         self.time = time
         self.data = data
 
-import binascii
 # 작업증명을 해주는 함수
 def proof_of_work(hash,data):
-    mine = making_hash(hash+data)
-    return mine
+    pass
 
 # 블록을 연결해주는 함수
 import datetime
