@@ -14,7 +14,7 @@ def proof_of_work(hash,data):
 
 # 블록을 만들어주는 함수
 import datetime
-def chaining_block(data, hash_, previoushash):
+def making_block(data, hash_, previoushash):
     currunt_block = block()
     currunt_block.setdata(data, hash_, previoushash, datetime.datetime.today().strftime('%Y-%m-%d-%H-%M-%S'))
     return currunt_block
@@ -25,12 +25,13 @@ def making_hash(word):
     return hashlib.sha256(word.encode()).hexdigest()
 # word넣으면 해시 나옴 
 
+# 체인연결
 if __name__ == '__main__':
     # if proof_of_work() == True:
     data = 'data'
     prehash = 'prehash'
     nowhash =  making_hash(data+prehash)
-    block = chaining_block(data, prehash, nowhash)
+    block = making_block(data, prehash, nowhash)
     output = '%s%s%s%s'%(block.hash_, block.previoushash, block.data, block.time)
     chain.append(output)
 
