@@ -14,7 +14,7 @@ def proof_of_work(hash,data):
 
 # 블록을 만들어주는 함수
 import datetime
-def making_block(index, data, hash_, previoushash):
+def making_block(data, hash_, previoushash):
     currunt_block = block()
     currunt_block.setdata(data, hash_, previoushash, datetime.datetime.today().strftime('%Y-%m-%d-%H-%M-%S'))
     return currunt_block
