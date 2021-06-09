@@ -53,4 +53,5 @@ def valid_proof(last_proof,proof):
     guess = str(last_proof + proof).encode()
     guess_hash = hashlib.sha256(guess).hexigest()
     return guess_hash[:4] == "0000"
-    #작업증명 << 수정가능 응응
+    #작업증명 << 수정가능 응응 
+    #dlfdsfdslk
